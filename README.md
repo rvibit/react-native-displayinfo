@@ -7,7 +7,7 @@ React native package to get device display info.
 ## Installation
 
 ```sh
-npm install react-native-displayinfo
+not published to npm yet
 ```
 
 ## Usage
