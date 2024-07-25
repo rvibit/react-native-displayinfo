@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import {
+  getRefreshRate,
   getAlternativeRefreshRates,
   getConstants,
   isHdr,
@@ -10,6 +11,7 @@ export default function App() {
   const [result] = useState<number | undefined>();
 
   useEffect(() => {
+    console.log(getRefreshRate());
     console.log(isHdr());
     console.log(getAlternativeRefreshRates());
     console.log(getConstants());

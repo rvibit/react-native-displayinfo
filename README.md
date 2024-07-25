@@ -1,6 +1,8 @@
 # react-native-displayinfo
 
-React native package to get device display info 
+React native package to get device display info.
+
+**NOTE: This package was created to learn Turbomodules in React Native.**
 
 ## Installation
 
@@ -10,15 +12,18 @@ npm install react-native-displayinfo
 
 ## Usage
 
-
 ```js
-import { multiply } from 'react-native-displayinfo';
+import {
+  getRefreshRate,
+  getAlternativeRefreshRates,
+  getConstants,
+  isHdr,
+} from 'react-native-displayinfo';
 
 // ...
 
-const result = await multiply(3, 7);
+console.log(getRefreshRate(), isHdr(), getAlternativeRefreshRates());
 ```
-
 
 ## Contributing
 
