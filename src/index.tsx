@@ -1,4 +1,5 @@
 import { NativeModules, Platform } from 'react-native';
+import type { Spec } from './NativeDisplayinfo';
 
 const LINKING_ERROR =
   `The package 'react-native-displayinfo' doesn't seem to be linked. Make sure: \n\n` +
@@ -13,7 +14,7 @@ const DisplayinfoModule = isTurboModuleEnabled
   ? require('./NativeDisplayinfo').default
   : NativeModules.Displayinfo;
 
-const Displayinfo = DisplayinfoModule
+const Displayinfo: Spec = DisplayinfoModule
   ? DisplayinfoModule
   : new Proxy(
       {},
@@ -24,6 +25,10 @@ const Displayinfo = DisplayinfoModule
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return Displayinfo.multiply(a, b);
-}
+export const {
+  getRefreshRate,
+  getAll,
+  getAlternativeRefreshRates,
+  getConstants,
+  isHdr,
+} = Displayinfo;
